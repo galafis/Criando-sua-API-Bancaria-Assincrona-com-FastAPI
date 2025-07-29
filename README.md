@@ -66,3 +66,23 @@ Acesse: http://localhost:8000/docs
 Sou Gabriel Lafis, estudante de Ciência de Dados e entusiasta de desenvolvimento backend com Python.
 
 Feito com 💙 usando FastAPI.
+
+
+## 📋 Descrição
+
+Descreva aqui o conteúdo desta seção.
+
+
+## 📦 Instalação
+
+Descreva aqui o conteúdo desta seção.
+
+
+## 💻 Uso
+
+Descreva aqui o conteúdo desta seção.
+
+
+## 📄 Licença
+
+Descreva aqui o conteúdo desta seção.
