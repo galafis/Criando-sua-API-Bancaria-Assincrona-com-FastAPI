@@ -1,0 +1,67 @@
+
+site_name: API Bancária Assíncrona com FastAPI
+site_url: https://galafis.github.io/Criando-sua-API-Bancaria-Assincrona-com-FastAPI/
+site_description: Documentação da API Bancária Assíncrona desenvolvida com FastAPI.
+
+repo_name: galafis/Criando-sua-API-Bancaria-Assincrona-com-FastAPI
+repo_url: https://github.com/galafis/Criando-sua-API-Bancaria-Assincrona-com-FastAPI
+
+theme:
+  name: material
+  language: pt
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+
+docs_dir: docs_output/docs
+
+nav:
+  - Home: index.md
+  - Guia de Instalação: installation.md
+  - Endpoints da API: api-endpoints.md
+  - Modelos de Dados: data-models.md
+  - Contribuição: contributing.md
+  - Licença: license.md
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/galafis
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/gabriel-demetrios-lafis/
+
