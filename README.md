@@ -7,8 +7,6 @@
 <h3 align="center">Construindo uma API Bancária de Alta Performance com Python</h3>
 
 <p align="center">
-  <a href="https://github.com/galafis/Criando-sua-API-Bancaria-Assincrona-com-FastAPI/actions/workflows/main.yml">
-    <img src="https://github.com/galafis/Criando-sua-API-Bancaria-Assincrona-com-FastAPI/actions/workflows/main.yml/badge.svg" alt="Build Status">
   </a>
   <img src="https://img.shields.io/badge/Python-3.11%2B-blue" alt="Python Version">
   <img src="https://img.shields.io/badge/FastAPI-0.118.0-009688" alt="FastAPI Version">
