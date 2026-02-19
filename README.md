@@ -13,7 +13,78 @@
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
 </p>
 
---- 
+---
+
+## Arquitetura Assincrona | Async Architecture
+
+```mermaid
+flowchart TD
+    Client([Client\nHTTP / Swagger UI]) -->|Async HTTP Request| FastAPI
+
+    subgraph FastAPI_App["FastAPI Application (Async)"]
+        FastAPI["FastAPI Router\n/contas\n/deposito\n/saque\n/transferencia"] -->|async def| Routes
+        Routes["Route Handlers\ncontas_router\noperacoes_router"] -->|Pydantic Validation| Schemas
+        Schemas["Pydantic Schemas\nAccountCreate\nDepositWithdraw\nTransfer"] -->|Validated Data| Services
+        Services["Service Layer\ncreate_account()\ndeposit()\nwithdraw()\ntransfer()"] -->|async SQLAlchemy| DB
+    end
+
+    subgraph Persistence["Persistence Layer"]
+        DB["SQLAlchemy (Async)\nAsyncSession"] -->|SQL Queries| SQLite
+        SQLite["SQLite Database\nsql_app.db\nContas\nTransacoes"]
+        Alembic["Alembic Migrations\nalembic upgrade head"] -.->|Schema migrations| SQLite
+    end
+
+    SQLite -->|ResultSet| DB
+    DB --> Services
+    Services -->|Account / List| Routes
+    Routes -->|JSON Response| Client
+
+    subgraph Docs["Auto Docs"]
+        Swagger["Swagger UI\n/docs"]
+        ReDoc["ReDoc\n/redoc"]
+    end
+
+    FastAPI -.-> Swagger
+    FastAPI -.-> ReDoc
+
+    style FastAPI_App fill:#1a3a2a,color:#fff
+    style Persistence fill:#1e3a5f,color:#fff
+    style Docs fill:#4a2a1e,color:#fff
+    style Client fill:#3d2a4a,color:#fff
+```
+
+---
+
+## Fluxo de Transferencia | Transfer Flow
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant API as FastAPI (Async)
+    participant Svc as TransferService
+    participant DB as SQLite (AsyncSession)
+
+    C->>API: POST /contas/{from}/transferencia
+    API->>API: Pydantic validates Transfer schema
+    API->>Svc: await transfer(from_id, to_id, amount)
+    Svc->>DB: await session.get(Account, from_id)
+    DB-->>Svc: source_account
+    Svc->>DB: await session.get(Account, to_id)
+    DB-->>Svc: target_account
+    Svc->>Svc: Validate balance (source >= amount)
+    alt Saldo insuficiente / Insufficient balance
+        Svc-->>API: raise HTTPException(400)
+        API-->>C: 400 Bad Request
+    else Transferencia valida / Valid transfer
+        Svc->>DB: UPDATE source balance
+        Svc->>DB: UPDATE target balance
+        DB-->>Svc: commit()
+        Svc-->>API: [source_account, target_account]
+        API-->>C: 200 OK - List[Account]
+    end
+```
+
+---
 
 ## 🇧🇷 Português
 
