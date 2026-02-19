@@ -328,3 +328,31 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 This project was developed by **Gabriel Demetrios Lafis**, a student and enthusiast of backend development with Python. Connect with me on [LinkedIn](https://www.linkedin.com/in/gabriel-demetrios-lafis/) or explore other projects on my [GitHub](https://github.com/galafis).
 
+
+---
+
+## English
+
+### Overview
+
+Project - A project built with Python, SQL, FastAPI, developed by Gabriel Demetrios Lafis as part of professional portfolio and continuous learning in Data Science and Software Engineering.
+
+### Key Features
+
+This project demonstrates practical application of modern development concepts including clean code architecture, responsive design patterns, and industry-standard best practices. The implementation showcases real-world problem solving with production-ready code quality.
+
+### How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/galafis/Criando-sua-API-Bancaria-Assincrona-com-FastAPI.git
+   ```
+2. Follow the setup instructions in the Portuguese section above.
+
+### License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Developed by [Gabriel Demetrios Lafis](https://github.com/galafis)
