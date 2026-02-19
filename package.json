@@ -1,0 +1,13 @@
+{
+  "name": "criando-sua-api-bancaria-assincrona-com-fastapi",
+  "version": "1.0.0",
+  "description": "Client([Client\\nHTTP / Swagger UI]) -->|Async HTTP Request| FastAPI",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@node-rs": "*"
+  }
+}
