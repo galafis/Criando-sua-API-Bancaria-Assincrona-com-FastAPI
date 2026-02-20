@@ -1,5 +1,5 @@
-fastapi
-uvicorn[standard]
-sqlalchemy
-pydantic
-alembic
+fastapi>=0.108.0
+uvicorn[standard]>=0.25.0
+sqlalchemy>=2.0.0
+pydantic>=2.5.0
+alembic>=1.13.0
