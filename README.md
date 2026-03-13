@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/Python-3.11%2B-blue" alt="Python Version">
   <img src="https://img.shields.io/badge/FastAPI-0.118.0-009688" alt="FastAPI Version">
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker)](Dockerfile)
 </p>
 
 ---
